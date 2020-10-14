@@ -6,7 +6,7 @@
     docker-compose up -d --build site
     cd src
     composer update
-    php artisan .env.example .env
+    cp .env.example .env
     php artisan key:generate
     php artisan migrate:fresh --seed
     php artisan serve
