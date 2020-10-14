@@ -20,6 +20,11 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('/reset-password', 'HomeController@resetPassword')->name('reset-password');
 
     Route::resource('users', 'UserController', ['except' => ['show']]);
+
+    Route::resource('subjects', 'SubjectController', ['except' => ['show']]);
+    Route::get('subjects/get-data', 'SubjectController@getData');
+    Route::get('subjects/restore', 'SubjectController@restore')->name('subjects.restore');
+
 });
 
 

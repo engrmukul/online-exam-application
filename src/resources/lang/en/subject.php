@@ -3,14 +3,11 @@
 return [
 
     //LIST PAGE
-    'SN' => 'সিরিয়াল',
-    'name' => 'নাম',
-    'mobile' => 'মোবাইল',
-    'username' => 'উজারনেম',
-    'email' => 'ইমেইল',
-    'role' => 'রোল',
-    'status' => 'স্ট্যাটাস',
-    'action' => 'অ্যাকশন',
+    'SN' => 'SN',
+    'code' => 'Code',
+    'name' => 'Name',
+    'status' => 'Status',
+    'action' => 'Action',
 
     //MESSAGE
     'create_success' => 'গ্রাহক সফলভাবে যুক্ত হয়েছে',

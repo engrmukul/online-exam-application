@@ -56,14 +56,6 @@ class BaseRepository implements BaseContract
         return $this->model->orderBy($orderBy, $sortBy)->get($columns);
     }
 
-    public function shopWiseAllData($columns = array('*'), string $orderBy = 'id', string $sortBy = 'desc')
-    {
-        if(auth()->user()->role == 'staff'){
-            return $this->model->where('shop_id', auth()->user()->shop_id )->where('created_by', auth()->user()->id)->orderBy($orderBy, $sortBy);
-        }
-        return $this->model->where('shop_id', auth()->user()->shop_id )->orderBy($orderBy, $sortBy);
-    }
-
     /**
      * @param int $id
      * @return mixed
@@ -122,6 +114,6 @@ class BaseRepository implements BaseContract
 
     public function restoreOnlyTrashed()
     {
-        return $this->model->onlyTrashed()->where('shop_id', auth()->user()->shop_id)->restore();
+        return $this->model->onlyTrashed()->restore();
     }
 }

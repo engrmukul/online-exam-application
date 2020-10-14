@@ -21,7 +21,7 @@
 <body class="gray-bg lp">
 
 @section('content')
-    <div class="container" style="margin-top: 250px;">
+    <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 col-sm-12 lpform">
                 <div class="card animate__animated animate__fadeIn animate__delay-0s">
@@ -88,7 +88,7 @@
                                 {{ __('Login') }}
                             </button>
 
-                            <a class="btn btn-link" href="{{ route('password.request') }}">
+                            <a class="btn btn-link" href="#">
                                 {{ __('Forgot Your Password?') }}
                             </a>
                         </form>

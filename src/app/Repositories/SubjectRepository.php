@@ -2,20 +2,20 @@
 
 namespace App\Repositories;
 
-use App\Models\ExpenseType;
-use App\Contracts\ExpenseTypeContract;
+use App\Models\Subject;
+use App\Contracts\SubjectContract;
 use Illuminate\Database\QueryException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Doctrine\Instantiator\Exception\InvalidArgumentException;
-use Yajra\DataTables\DataTables;
+use Yajra\DataTables\Facades\DataTables;
 
-class ExpenseTypeRepository extends BaseRepository implements ExpenseTypeContract
+class SubjectRepository extends BaseRepository implements SubjectContract
 {
     /**
-     * ExpenseTypeRepository constructor.
-     * @param ExpenseType $model
+     * SubjectRepository constructor.
+     * @param Subject $model
      */
-    public function __construct(ExpenseType $model)
+    public function __construct(Subject $model)
     {
         parent::__construct($model);
         $this->model = $model;
@@ -27,7 +27,7 @@ class ExpenseTypeRepository extends BaseRepository implements ExpenseTypeContrac
      * @param array $columns
      * @return mixed
      */
-    public function listExpenseType(string $order = 'id', string $sort = 'desc', array $columns = ['*'])
+    public function listSubject(string $order = 'id', string $sort = 'desc', array $columns = ['*'])
     {
         //return $this->all($columns, $order, $sort);
         $query = $this->shopWiseAllData();
@@ -35,13 +35,13 @@ class ExpenseTypeRepository extends BaseRepository implements ExpenseTypeContrac
             ->addColumn('action', function ($row) {
                 $actions = '';
 
-                $actions.= '<a class="btn btn-primary btn-xs float-left mr-1"" href="' . route('expense-types.edit', [$row->id]) . '" title="Customer Edit"><i class="fa fa-pencil"></i>'. trans("common.edit") . '</a>';
+                $actions.= '<a class="btn btn-primary btn-xs float-left mr-1" href="' . route('subjects.edit', [$row->id]) . '" title="Subject Edit"><i class="fa fa-pencil"></i>'. trans("common.edit") . '</a>';
 
                 $actions.= '
-                    <form action="'.route('expense-types.destroy', [$row->id]).'" method="POST">
+                    <form action="'.route('subjects.destroy', [$row->id]).'" method="POST">
                         <input type="hidden" name="_method" value="delete">
                         <input type="hidden" name="_token" value="'.csrf_token().'">
-                        <button type="submit" class="btn btn-danger btn-xs"><i class="fa fa-remove"></i>'. trans("common.delete") . '</button>
+                        <button type="submit" class="btn btn-danger btn-xs"><i class="fa fa-remove"></i> '. trans("common.delete") . '</button>
                     </form>
                 ';
 
@@ -54,7 +54,7 @@ class ExpenseTypeRepository extends BaseRepository implements ExpenseTypeContrac
      * @param int $id
      * @return mixed
      */
-    public function findExpenseTypeById(int $id)
+    public function findSubjectById(int $id)
     {
         try {
             return $this->findOneOrFail($id);
@@ -68,24 +68,22 @@ class ExpenseTypeRepository extends BaseRepository implements ExpenseTypeContrac
 
     /**
      * @param array $params
-     * @return ExpenseType|mixed
+     * @return Subject|mixed
      */
-    public function createExpenseType(array $params)
+    public function createSubject(array $params)
     {
         try {
             $collection = collect($params);
 
             $created_by = auth()->user()->id;
+            
+            $merge = $collection->merge(compact('created_by'));
 
-            $shop_id = auth()->user()->shop_id;
+            $subject = new Subject($merge->all());
 
-            $merge = $collection->merge(compact('created_by', 'shop_id'));
+            $subject->save();
 
-            $expenseType = new ExpenseType($merge->all());
-
-            $expenseType->save();
-
-            return $expenseType;
+            return $subject;
 
         } catch (QueryException $exception) {
             throw new InvalidArgumentException($exception->getMessage());
@@ -96,9 +94,9 @@ class ExpenseTypeRepository extends BaseRepository implements ExpenseTypeContrac
      * @param array $params
      * @return mixed
      */
-    public function updateExpenseType(array $params)
+    public function updateSubject(array $params)
     {
-        $expenseType = $this->findExpenseTypeById($params['id']);
+        $subject = $this->findSubjectById($params['id']);
 
         $collection = collect($params)->except('_token');
 
@@ -106,20 +104,20 @@ class ExpenseTypeRepository extends BaseRepository implements ExpenseTypeContrac
 
         $merge = $collection->merge(compact('updated_by'));
 
-        $expenseType->update($merge->all());
+        $subject->update($merge->all());
 
-        return $expenseType;
+        return $subject;
     }
 
     /**
      * @param $id
      * @return bool|mixed
      */
-    public function deleteExpenseType($id, array $params)
+    public function deleteSubject($id, array $params)
     {
-        $expenseType = $this->findExpenseTypeById($id);
+        $subject = $this->findSubjectById($id);
 
-        $expenseType->delete();
+        $subject->delete();
 
         $collection = collect($params)->except('_token');
 
@@ -127,9 +125,9 @@ class ExpenseTypeRepository extends BaseRepository implements ExpenseTypeContrac
 
         $merge = $collection->merge(compact('deleted_by'));
 
-        $expenseType->update($merge->all());
+        $subject->update($merge->all());
 
-        return $expenseType;
+        return $subject;
     }
 
     /**
@@ -138,13 +136,5 @@ class ExpenseTypeRepository extends BaseRepository implements ExpenseTypeContrac
     public function restore()
     {
         return $this->restoreOnlyTrashed();
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getExpensetypeList()
-    {
-        return $this->all();
     }
 }

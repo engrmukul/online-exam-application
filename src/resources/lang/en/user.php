@@ -12,12 +12,4 @@ return [
     'status' => 'status',
     'action' => 'action',
 
-    //MESSAGE
-    'create_success' => 'Successfully created',
-    'create_error' => 'Create error',
-    'update_success' => 'Successfully updated',
-    'update_error' => 'Update error',
-    'delete_success' => 'Successfully deleted',
-    'delete_error' => 'Delete error',
-
 ];
