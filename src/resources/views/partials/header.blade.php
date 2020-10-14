@@ -6,7 +6,7 @@
         <ul class="nav navbar-top-links navbar-right">
             <li>
                 <span
-                    class="m-r-sm text-muted welcome-message">Just Do It</span>
+                    class="m-r-sm text-muted welcome-message">Online Exam System</span>
             </li>
 
             <li>

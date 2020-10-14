@@ -1,5 +1,5 @@
 <div class="footer">
     <div>
-        <strong>Copyright</strong> Ticon system limited &copy; 2020
+        <strong>Copyright</strong> <a target="_blank" href="https://cloudly.io/">cloudly.io</a> &copy; 2020
     </div>
 </div>

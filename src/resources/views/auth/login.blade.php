@@ -6,12 +6,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>TPM</title>
+    <title>OES</title>
 
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('font-awesome/css/font-awesome.css') }}" rel="stylesheet">
 
-    {{-- <link href="{{ asset('public/css/animate.css') }}" rel="stylesheet"> --}}
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
@@ -26,7 +25,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 col-sm-12 lpform">
                 <div class="card animate__animated animate__fadeIn animate__delay-0s">
-                    <div class="card-header"><i class="fa fa-lock" aria-hidden="true"></i>{{ trans('Login') }} <span class="float-right text-success">Ticon Project Manager</span></div>
+                    <div class="card-header"><i class="fa fa-lock" aria-hidden="true"></i>{{ trans('Login') }} <span class="float-right text-success">Online Exam System</span></div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">

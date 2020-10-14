@@ -16,6 +16,5 @@ trait TableCommonColumn
         $table->foreignId('created_by')->references('id')->on('users')->onDelete('cascade');
         $table->foreignId('updated_by')->nullable()->references('id')->on('users')->onDelete('cascade');
         $table->foreignId('deleted_by')->nullable()->references('id')->on('users')->onDelete('cascade');
-        $table->foreignId('company_id')->nullable()->references('id')->on('companies')->onDelete('cascade');
     }
 }
