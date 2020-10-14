@@ -1,0 +1,35 @@
+<?php
+
+return [
+
+    'dashboard' => 'ড্যাশবোর্ড',
+    'shops' => 'দোকান',
+    'settings' => 'সেটিংস',
+    'transaction' => 'লেনদেন',
+    'expense' => 'খরচ',
+    'party' => 'পার্টি',
+    'users' => 'উজার',
+    'staffs' => 'কর্মী',
+    'units' => 'আইটেম ইউনিট',
+    'categories' => 'আইটেম ক্যাটাগরী',
+    'products' => 'আইটেম',
+    'vendors' => 'সাপ্লাইয়ার',
+    'customers' => 'কাস্টমার',
+    'sales' => 'বিক্রি',
+    'expense_types' => 'খরচ টাইপ',
+    'expenses' => 'খরচ',
+    'payables' => 'দেনা',
+    'receivables' => 'পাওনা',
+    'purchases' => 'ক্রয়',
+    'return_purchases' => 'ক্রয় রিটার্ন',
+    'return_sales' => 'বিক্রয় রিটার্ন',
+    'stocks' => 'স্টক',
+    'reports' => 'রিপোর্টস',
+    'message' => 'মেসেজ',
+    'change_password' => 'পাসওয়ার্ড পরিবর্তন',
+    'system_admin' => 'সিস্টেম অ্যাডমিন',
+    'owner' => 'মালিক',
+    'staff' => 'স্টাফ',
+    'logout' => 'প্রস্থান',
+
+];
