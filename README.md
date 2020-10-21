@@ -11,4 +11,3 @@
     php artisan migrate:fresh --seed
     php artisan serve
     
-[![Watch the video](http://rongtulibd.com/oets.png)](https://www.youtube.com/embed/YQ_PWpHfCfo)
