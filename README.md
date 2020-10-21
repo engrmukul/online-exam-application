@@ -11,9 +11,7 @@
     php artisan migrate:fresh --seed
     php artisan serve
     
-[![Watch the video](https://drive.google.com/file/d/1AE79E87fcFstrP4ulEUzPV6dCNfOglLy/view?usp=sharing)](https://www.youtube.com/embed/YQ_PWpHfCfo)
-
-[![Watch the video](https://img.youtube.com/vi/T-D1KVIuvjA/maxresdefault.jpg)](https://youtu.be/T-D1KVIuvjA)
+[![Watch the video](http://rongtulibd.com/oets.png](https://www.youtube.com/embed/YQ_PWpHfCfo)
 
 
 
