@@ -11,4 +11,6 @@
     php artisan migrate:fresh --seed
     php artisan serve
     
-    <iframe width="748" height="421" src="https://www.youtube.com/embed/YQ_PWpHfCfo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+    [![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://www.youtube.com/embed/YQ_PWpHfCfo)
+
