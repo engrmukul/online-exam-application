@@ -12,5 +12,5 @@
     php artisan serve
     
     
-    [![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://www.youtube.com/embed/YQ_PWpHfCfo)
+[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://www.youtube.com/embed/YQ_PWpHfCfo)
 
