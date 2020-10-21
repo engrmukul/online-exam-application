@@ -11,6 +11,6 @@
     php artisan migrate:fresh --seed
     php artisan serve
     
-    
-[![Watch the video]](https://www.youtube.com/embed/YQ_PWpHfCfo)
+[![Watch the video](https://drive.google.com/file/d/1AE79E87fcFstrP4ulEUzPV6dCNfOglLy/view?usp=sharing)](https://www.youtube.com/embed/YQ_PWpHfCfo)
+
 
